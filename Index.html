@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Lab 9</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
+ 
+</head>
+<body>
+    <header>
+        <div class="headerLeft">
+            <h1>Välkommen till mitt bibliotek!</h1>
+            <h4>jQuery Ajax Lab 9 - Kristoffer Rygaard</h4>
+        </div>
+        <div class="headerRight">
+            <button id="changeLibraryButton">Change Library</button>
+        </div>
+    </header>
+    <main>
+
+        <div class="mainLeft">
+            <div class="addBook">
+                <h2>Lägg till en bok</h2>
+                <p>Title:</p> <input type="text" id="title">
+                <p>Author:</p> <input type="text" id="author">
+                <button id="addBookButton">Add book</button>
+            </div>
+        </div>
+
+        <div class="mainRight">
+            <div id="bookCard" class="bookCard">
+                <h1>Våra böcker</h1>
+                <button id="loadBookButton">Load Books</button>
+                <div class="testDiv">
+                    <ul id="libraryList">
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <footer>
+    
+    </footer>
+</body>
+</html>
