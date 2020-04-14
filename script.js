@@ -37,7 +37,7 @@ $(document).ready(() => {
 	function onSuccessGetNewAPIkey(data) {
 		let newAPIobject = JSON.parse(data);
 		document.documentElement.style.setProperty('--headerRight-color', "successBackground");
-		document.getElementById("headerRightInfo").innerHTML = "You got a new API!";
+		document.getElementById("headerRightInfo").innerHTML = "You got a new API KEY!";
 		console.log(newAPIobject);
 		key = newAPIobject.key;
 	}
