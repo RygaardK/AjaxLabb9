@@ -37,12 +37,14 @@ $(document).ready(() => {
 	function onSuccessGetNewAPIkey(data) {
 		let newAPIobject = JSON.parse(data);
 		document.documentElement.style.setProperty('--headerRight-color', "successBackground");
+		document.getElementById("headerRightInfo").innerHTML = "You got a new API!";
 		console.log(newAPIobject);
 		key = newAPIobject.key;
-		}
+	}
 	function onFailureGetNewAPIkey(message) {
 		console.log('AJAX FAILD TO GET NEW API', message); /// OUTPut HTML
 		document.documentElement.style.setProperty('--headerRight-color', "warningBackground");
+		document.getElementById("headerRightInfo").innerHTML = "Failed, no new API!";
 	}
 	
 
@@ -75,10 +77,12 @@ $(document).ready(() => {
 			sendRequestAddBook(tryCount);
 		} else if (book.status == 'error'){
 			console.log('ALL TRIES ARE OUT!');
+			document.getElementById("addBookInfo").innerHTML = "Failed to add book!";
 			document.documentElement.style.setProperty('--mainLeft-color', "warningBackground");
 		} else if (book.status == 'success'){
 			console.log(book.status, book.id);
-			document.documentElement.style.setProperty('--mainLeft-color', "successBackground");					
+			document.documentElement.style.setProperty('--mainLeft-color', "successBackground");	
+			document.getElementById("addBookInfo").innerHTML = "Success, your book is added!";				
 		} else {
 			console.log('SOMETHINGY IS WRONGY!')
 		}
@@ -87,6 +91,7 @@ $(document).ready(() => {
 	function onFailureAdd(message) {
 		console.log('AJAX ADD onFailure', message); /// OUTPut HTML
 		document.documentElement.style.setProperty('--mainLeft-color', "warningBackground");
+		document.getElementById("addBookInfo").innerHTML = "Failed to add book!";
 	}
 
 	loadBookButton.on('click', event => loadBooks(6))
@@ -113,10 +118,11 @@ $(document).ready(() => {
 			loadBooks(tryCount);
 		} else if (book.status == 'error'){
 			console.log('ALL TRIES ARE OUT!');/// OUTPut HTML   KVAR 
-			document.documentElement.style.setProperty('--mainRight-color', "warningBackground");
-			
+			document.documentElement.style.setProperty('--mainRight-color', "warningBackground");	
+			document.getElementById("mainRightInfo").innerHTML = "Failed to load book!";
 		} else if (book.status == 'success'){
 			document.documentElement.style.setProperty('--mainRight-color', "successBackground");
+			document.getElementById("mainRightInfo").innerHTML = "Sucess!";
 			let newList = [...book.data];
 			let libraryList = $('#libraryList');
 			libraryList.html("");
@@ -138,7 +144,8 @@ $(document).ready(() => {
 
 	function onFailureLoad(message) {
 		console.log('AJAX LOAD onFailure', message); /// OUTPut HTML
-		document.documentElement.style.setProperty('--mainRight-color', "red");
+		document.documentElement.style.setProperty('--mainRight-color', "warningBackground");
+		document.getElementById("mainRightInfo").innerHTML = "Failed to load book!";
 	}
 });
 
