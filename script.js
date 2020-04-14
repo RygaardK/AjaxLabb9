@@ -36,6 +36,7 @@ $(document).ready(() => {
 	
 	function onSuccessGetNewAPIkey(data) {
 		let newAPIobject = JSON.parse(data);
+		document.documentElement.style.setProperty('--headerRight-color', "successBackground");
 		console.log(newAPIobject);
 		key = newAPIobject.key;
 		}
@@ -74,10 +75,10 @@ $(document).ready(() => {
 			sendRequestAddBook(tryCount);
 		} else if (book.status == 'error'){
 			console.log('ALL TRIES ARE OUT!');
-					
+			document.documentElement.style.setProperty('--mainLeft-color', "warningBackground");
 		} else if (book.status == 'success'){
 			console.log(book.status, book.id);
-					
+			document.documentElement.style.setProperty('--mainLeft-color', "successBackground");					
 		} else {
 			console.log('SOMETHINGY IS WRONGY!')
 		}
@@ -115,6 +116,7 @@ $(document).ready(() => {
 			document.documentElement.style.setProperty('--mainRight-color', "warningBackground");
 			
 		} else if (book.status == 'success'){
+			document.documentElement.style.setProperty('--mainRight-color', "successBackground");
 			let newList = [...book.data];
 			let libraryList = $('#libraryList');
 			libraryList.html("");

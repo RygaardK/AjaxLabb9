@@ -13,8 +13,6 @@
 }
 
 body {
-    height: 100%;
-    
     background-color: #f1f1f1;
 }
 
@@ -22,6 +20,7 @@ header {
     padding: 1.4em;
     background-color: cadetblue;
     display: flex;
+    min-height: 15vh;
 }
 
 .headerRight {
@@ -30,6 +29,7 @@ header {
     }
 
 main {
+    min-height: 60vh;
     overflow: auto;
     padding: 2em;
     display: flex;
@@ -84,8 +84,12 @@ h2,h3 {
 
 @keyframes warningBackground {
     0% {background-color: #f1f1f1;}
-    25% {background-color: #ff5050;}
     50% {background-color: #ff0000;}
-    75% {background-color: #ff5050;}
+    100% {background-color: #f1f1f1;}
+}
+
+@keyframes successBackground {
+    0% {background-color: #f1f1f1;}
+    50% {background-color: #00ff00;}
     100% {background-color: #f1f1f1;}
 }
