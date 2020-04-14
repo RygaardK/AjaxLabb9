@@ -50,7 +50,7 @@ $(document).ready(() => {
 
 	////
 
-	addBookButton.on('click', event => sendRequestAddBook(6))
+	addBookButton.on('click', event => sendRequestAddBook(4))
 	function sendRequestAddBook(tryCount) {
 		const url = 'https://www.forverkliga.se/JavaScript/api/crud.php';
 		const settings = {
@@ -94,7 +94,7 @@ $(document).ready(() => {
 		document.getElementById("addBookInfo").innerHTML = "Failed to add book!";
 	}
 
-	loadBookButton.on('click', event => loadBooks(6))
+	loadBookButton.on('click', event => loadBooks(4))
 		function loadBooks(tryCount) {
 			const url = 'https://www.forverkliga.se/JavaScript/api/crud.php';
 			const settings = {
